@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1733021028 source:c:\users\cmjyt\onedrive\desktop\c++\cap 2\ejercicio 1\main.cpp
+	<iostream>
+	<cmath>
+	<windows.h>
+
