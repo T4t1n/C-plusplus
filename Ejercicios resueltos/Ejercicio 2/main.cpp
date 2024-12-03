@@ -43,7 +43,7 @@ int main()
         // Calculo de anguo a raianes
         radianes = angulo * pi / 180;
 
-        radianes = cos(radianes);
+        radianes = sin(radianes);
 
         float distancia = hipotenusa * radianes;
 
