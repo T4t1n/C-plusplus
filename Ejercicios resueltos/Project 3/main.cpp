@@ -32,21 +32,21 @@ int main()
     // Calculos.
 
     //Calculo de Celsius a grados Fahrenheit
-    TempF = 9/5 * TempC + 32;
+    TempF =  (1.8 * TempC) + 32;
     //Calculo de Celsius a grados Kelvin
     TempK = TempC + 273;
     //Calculo de Celsius a grados Rankime
     TempR = TempF + 460;
 
     /* ---- Imprimir datos y resultados ---- */
-    cout << "\n\t Imprimir datos y resultados \n";
+    cout << "\n\t\t Imprimir datos y resultados \n";
     cout << "\t-----------------------------------------------\n";
     cout << endl;
     cout << "\n\tGrados Celsius digitado: \t" << TempC << endl << endl;
-    cout << "\n\tResultado de grados Farenheit: \t" << TempF << endl << endl;
-    cout << "\n\tResultado de grados Kelvin: \t" << TempK << endl << endl;
-    cout << "\n\tResultado de grados Rankime: \t" << TempR << endl << endl;
-
+    cout << "\n\tResultado de Celsius a grados Fahrenheit es: \t" << TempF << endl << endl;
+    cout << "\n\tResultado de Celsius a grados Kelvin es: \t" << TempK << endl << endl;
+    cout << "\n\tResultado de Celsius a grados Rankime: \t" << TempR << endl << endl;
+    cout << "\n\t---------------------------------------------\n";
 
 
 
