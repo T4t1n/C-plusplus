@@ -33,8 +33,13 @@ int main()
         //Calculos
         raiz1 = (-coefb + sqrt(pow(coefb, 2) -4 * coefa * coefc)) / (2 * coefa);
         raiz2 = (-coefb - sqrt(pow(coefb, 2) -4 * coefa * coefc)) / (2 * coefa);
-        cout << "\n" << raiz1;
-        cout << "\n" << raiz2;
+
+        //Imprimir
+        cout << "\n\t\tImprimir datos y resultados";
+        cout << "\n\t-----------------------------------------------";
+        cout << "\n\tEcuación cuadrática general a X ^ 2 + b X + c";
+        cout << "\n\tEcuación cuadrática particular " << coefa << " X ^ 2 + " << coefb;
+
 
 
 
