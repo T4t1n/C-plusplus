@@ -5,6 +5,7 @@
 #include <cctype>
 #include <algorithm>
 #include <string_view>
+#include <limits>
 
 using namespace std;
 
@@ -27,9 +28,40 @@ int main()
         cout << "\n\n\tPrograma que calcula la nota final del estudiante!";
         cout << "\n\t--------------------------------------------------\n";
         do{
-        cout << "\n\n\tDigite el apellido del estudiante:\t";
-        cin >> apellido;
+            cout << "\n\n\tDigite el apellido del estudiante:\t";
+            cin >> apellido;
+            if(contieneCaracteresNombreInvalidos(apellido)){
+                system("cls");
+                cout << "\n\n\tError: Digite solo letras!";
+                Sleep(1000);
+                system("cls");
+            }
         }while(contieneCaracteresNombreInvalidos(apellido));
+
+        do{
+            cout << "\n\n\tDigite las tres notas parciales entre 0 y 5 :\n";
+            cout << "\t", cin >> parcial1, cout << "\t", cin >> parcial2, cout << "\t", cin >> parcial3;
+            if(cin.fail()){
+                cout << "\n\n\tError: Digite solo numeros!";
+                cin.clear();
+                cin.ignore();
+                Sleep(1000);
+                system("cls");
+            }else {
+                break;
+            }
+        }while(true);
+
+        /*
+            ++++++++++  +++++++++
+            ++++++++++  +++++++++
+            +++         ++     ++
+            +++         +++++++++
+            +++         ++     ++
+            ++++++++++  ++     ++
+            ++++++++++  ++     ++
+        */
+
 
 
 
