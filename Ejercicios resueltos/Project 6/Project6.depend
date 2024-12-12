@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1733976857 source:c:\users\cmjyt\onedrive\desktop\c++\ejercicios resueltos\project6\main.cpp
+	<iostream>
+	<string>
+	<locale.h>
+	<windows.h>
+	<cctype>
+	<algorithm>
+	<string_view>
+
