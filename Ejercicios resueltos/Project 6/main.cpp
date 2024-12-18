@@ -39,8 +39,24 @@ int main()
         }while(contieneCaracteresNombreInvalidos(apellido));
 
         do{
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "\n\n\tDigite las tres notas parciales entre 0 y 5 :\n";
-            cout << "\t", cin >> parcial1, cout << "\t", cin >> parcial2, cout << "\t", cin >> parcial3;
+            cout << "\t", cin >> parcial1;
+            if(parcial1 < 0 || parcial1 > 5){
+                cout << "\n\n\tError: Nota: " << parcial1 << " no esta en el rango de 0 - 5";
+                continue;
+            }
+            cout << "\t", cin >> parcial2;
+            if(parcial2 < 0 || parcial2 > 5){
+                cout << "\n\n\tError: Nota: " << parcial2 << " no esta en el rango de 0 - 5";
+                continue;
+            }
+            cout << "\t", cin >> parcial3;
+            if(parcial3 < 0 || parcial3 > 5){
+                cout << "\n\n\tError: Nota: " << parcial3 << " no esta en el rango de 0 - 5";
+                continue;
+            }
             if(cin.fail()){
                 cout << "\n\n\tError: Digite solo numeros!";
                 cin.clear();
@@ -52,14 +68,15 @@ int main()
             }
         }while(true);
 
+
         /*
-            ++++++++++  +++++++++
-            ++++++++++  +++++++++
-            +++         ++     ++
-            +++         +++++++++
-            +++         ++     ++
-            ++++++++++  ++     ++
-            ++++++++++  ++     ++
+            ++++++++++  +++++++++ ++++         ++++++++++ +++     +++ ++++         +++++++++++
+            ++++++++++  +++++++++ ++++         ++++++++++ +++     +++ ++++         +++++++++++
+            +++         ++     ++ ++++         +++        +++     +++ ++++         +++     +++
+            +++         +++++++++ ++++         +++        +++     +++ ++++         +++     +++
+            +++         ++     ++ ++++         +++        +++     +++ ++++         +++     +++
+            ++++++++++  ++     ++ ++++++++++++ ++++++++++ +++++++++++ ++++++++++++ +++++++++++
+            ++++++++++  ++     ++ ++++++++++++ ++++++++++ +++++++++++ ++++++++++++ +++++++++++
         */
 
 
