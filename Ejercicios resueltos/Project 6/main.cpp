@@ -18,6 +18,7 @@ int main()
     setlocale(LC_ALL, "");
     string apellido{}, seguir;
     float parcial1, parcial2, parcial3, notaFinal;
+    double porcentaje2 = 0.30;
 
     do
     {
@@ -38,59 +39,71 @@ int main()
             }
         }while(contieneCaracteresNombreInvalidos(apellido));
 
-
+        bool continuar1;
+        bool continuar2;
+        bool continuar3;
         do{
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            cout << "\n\n\tDigite la nota del parcial 1 entre 0 y 5 :\n";
-            cout << "\t", cin >> parcial1;
-            if(parcial1 < 0 || parcial1 > 5){
-                cout << "\n\n\tError: Nota: " << parcial1 << " no esta en el rango de 0 - 5";
-            }else  if(cin.fail()){
-                cout << "\n\n\tError: Digite solo numeros!";
-                cin.clear();
-                cin.ignore();
-                Sleep(1000);
-                system("cls");
-            }else {
-                continue;
-            }
-            cout << "\n\n\tDigite la nota del parcial 2 entre 0 y 5 :\n", cin >> parcial2;
-            if(parcial2 < 0 || parcial2 > 5){
-                cout << "\n\n\tError: Nota: " << parcial2 << " no esta en el rango de 0 - 5";
-            }else if(cin.fail()){
-                cout << "\n\n\tError: Digite solo numeros!";
-                cin.clear();
-                cin.ignore();
-                Sleep(1000);
-                system("cls");
-                continue;
-            }else {
-                continue;
-            }
+            do{
 
-            cout << "\n\n\tDigite la nota del parcial 2 entre 0 y 5 :\n", cin >> parcial3;
-            if(parcial3 < 0 || parcial3 > 5){
-                cout << "\n\n\tError: Nota: " << parcial3 << " no esta en el rango de 0 - 5";
-            }else  if(cin.fail()){
-                cout << "\n\n\tError: Digite solo numeros!";
-                cin.clear();
-                cin.ignore();
-                Sleep(1000);
-                system("cls");
-            }else {
-                continue;
-            }
+                    cout << "\n\n\tDigite la nota del parcial 1 entre 0 y 5 :\n";
+                    cout << "\t", cin >> parcial1;
+                    if(parcial1 < 0 || parcial1 > 5){
+                        cout << "\n\n\tError: Rango de 0 a 5!";
+                        continuar1 = false;
+                    }else if(cin.fail()){
+                        cout << "\n\n\tError: Digite solo numeros!";
+                        cin.clear();
+                        cin.ignore();
+                        Sleep(1000);
+                        system("cls");
+                        continuar1 = false;
 
-            if(cin.fail()){
-                cout << "\n\n\tError: Digite solo numeros!";
-                cin.clear();
-                cin.ignore();
-                Sleep(1000);
-                system("cls");
-            }else {
-                break;
-            }
+                    }else {
+                    break;}
+
+
+            }while(continuar1 == false);
+
+            do{
+                    cout << "\n\n\tDigite la nota del parcial 2 entre 0 y 5 :\n";
+                    cout << "\t", cin >> parcial2;
+                    if(parcial2 < 0 || parcial2 > 5){
+                        cout << "\n\n\tError: Rango de 0 a 5!";
+                        continuar2 = false;
+                    }else if(cin.fail()){
+                        cout << "\n\n\tError: Digite solo numeros!";
+                        cin.clear();
+                        cin.ignore();
+                        Sleep(1000);
+                        system("cls");
+                        continuar2 = false;
+
+                    }else{break;}
+
+            }while(continuar2 == false);
+
+            do{
+                 cout << "\n\n\tDigite la nota del parcial 3 entre 0 y 5 :\n";
+                    cout << "\t", cin >> parcial3;
+                    if(parcial3 < 0 || parcial3 > 5){
+                        cout << "\n\n\tError: Rango de 0 a 5!";
+                        continuar2 = false;
+                    }else if(cin.fail()){
+                        cout << "\n\n\tError: Digite solo numeros!";
+                        cin.clear();
+                        cin.ignore();
+                        Sleep(1000);
+                        system("cls");
+                        continuar3 = false;
+
+                    }else {
+                    break;}
+
+
+            }while(continuar3 == false);
+
+            break;
+
         }while(true);
 
 
@@ -104,10 +117,17 @@ int main()
             ++++++++++  ++     ++ ++++++++++++ ++++++++++ +++++++++++ ++++++++++++ +++++++++++
         */
 
+        notaFinal = (parcial1 * 0.25) + (parcial2 * 0.30) + (parcial3 * 0.45);
 
 
-
-
+        cout << "\n\n\t\tImprimir datos y resultados";
+        cout << "\n\t---------------------------------------------------------------------\n";
+        cout << "\n\n\tReporte de calificaciones del estudiante:\t" << apellido;
+        cout << "\n\tLa primera nota parcial y su porcentaje son:\t" << parcial1 << "\t" << 0.25;
+        cout << "\n\tLa segunda nota parcial y su porcentaje son:\t" << parcial2 << "\t" << porcentaje2;
+        cout << "\n\tLa tercera nota parcial y su porcentaje son:\t" << parcial3 << "\t" << 0.45;
+        cout << "\n\tLa nota final del estudiante es:\t\t" << notaFinal;
+        cout << "\n\n\n\t---------------------------------------------------------------------\n";
 
         cout << "\n\n\t¿Desea procesar otro estudiante? S o N\t";
         cin >> seguir;
