@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <string_view>
 #include <limits>
+#include <iomanip>
 
 using namespace std;
 
@@ -14,11 +15,12 @@ bool contieneCaracteresNombreInvalidos(const string& apellido);
 
 int main()
 {
+    cout << fixed << setprecision(2);
 
     setlocale(LC_ALL, "");
     string apellido{}, seguir;
     float parcial1, parcial2, parcial3, notaFinal;
-    double porcentaje2 = 0.30;
+    double porcentaje2{0.30};
 
     do
     {
