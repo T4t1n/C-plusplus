@@ -53,6 +53,14 @@ int main()
 
             cout << resultadoAlcance;
 
+            cout << "\n\n\t\tImprimir datos y resultado";
+            cout << "\n----------------------------------";
+            cout << "\n\n\tEl ángulo de disparo del proyectil es: " << angulo;
+            cout << "\n\tLa velocidad inicial del proyectil es: " << velocidad;
+            cout << "\n\tEl alcance máximo del proyectil es:" << resultadoAlcance;
+            cout << "\n\tLa altura máxima del proyectil es: ";
+            cout << "\n\n----------------------------------";
+
 
 
 
