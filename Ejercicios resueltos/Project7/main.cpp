@@ -4,6 +4,7 @@
 #include <cmath>
 #include <windows.h>
 #include <locale.h>
+#include <iomanip>
 
 
 using namespace std;
@@ -13,8 +14,8 @@ int main()
     setlocale(LC_ALL, "");
     system("title, Project 7");
     string seguir = "S";
-    float angulo, velocidad;
-    float seno, resultadoAlcance, pi=M_PI;
+    double angulo, velocidad, anguloradial;
+    double seno, resultadoAlcance, pi=M_PI, resultadoAltura, seno2, alturaRedondeada, factor;
     do {
         cout << "\n\n\tPrograma que calcula el alcance y altura máxima de un proyectil!";
         cout << "\n\t------------------------------------------------------------------";
@@ -44,21 +45,28 @@ int main()
                 cin >> angulo >> velocidad;
             };
 
-            // ---------------- Fórmula ´para el alcance máximo ----------------
+            // ---------------- Calculo ´para el alcance máximo ----------------
 
-            angulo = angulo * pi / 180;
-            seno = sin(2*angulo);
+            anguloradial = angulo * pi / 180;
+            seno = sin(2*anguloradial);
 
             resultadoAlcance = (pow(velocidad, 2) * 1) / 9.8;
 
-            cout << resultadoAlcance;
+            // ---------------- Calculo ´para la altura maxima del proyectil ----------------
+
+            seno2 = sin(anguloradial);
+            resultadoAltura =  pow((velocidad * seno2), 2);
+            resultadoAltura = resultadoAltura / (2 * 9.8);
+
+
 
             cout << "\n\n\t\tImprimir datos y resultado";
             cout << "\n----------------------------------";
             cout << "\n\n\tEl ángulo de disparo del proyectil es: " << angulo;
             cout << "\n\tLa velocidad inicial del proyectil es: " << velocidad;
             cout << "\n\tEl alcance máximo del proyectil es:" << resultadoAlcance;
-            cout << "\n\tLa altura máxima del proyectil es: ";
+            cout.precision(12);
+            cout << "\n\tLa altura máxima del proyectil es: " << resultadoAltura;
             cout << "\n\n----------------------------------";
 
 

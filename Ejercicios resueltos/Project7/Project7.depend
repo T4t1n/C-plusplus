@@ -1,9 +1,10 @@
 # depslib dependency file v1.0
-1734929470 source:c:\users\cmjyt\onedrive\desktop\c++\ejercicios resueltos\project7\main.cpp
+1735077051 source:c:\users\cmjyt\onedrive\desktop\c++\ejercicios resueltos\project7\main.cpp
 	<iostream>
 	<string>
 	<limits>
 	<cmath>
 	<windows.h>
 	<locale.h>
+	<iomanip>
 
