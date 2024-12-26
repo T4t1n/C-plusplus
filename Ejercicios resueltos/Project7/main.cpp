@@ -12,6 +12,7 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "");
+    system("color 60");
     system("title, Project 7");
     string seguir = "S";
     double angulo, velocidad, anguloradial;
@@ -21,8 +22,8 @@ int main()
         cout << "\n\t------------------------------------------------------------------";
 
 
-            cout << "\n\n\tDigite el ángulo > 0 y < 90 y velocidad inicial del proyectil en m/s:\t";
-            cin >> angulo >> velocidad;
+            cout << "\n\n\tDigite el ángulo > 0 y < 90 y velocidad inicial del proyectil en m/s:\n";
+            cout << "\t", cin >> angulo,cout << "\t", cin >> velocidad;
 
             while(cin.fail()){
                 cin.clear();
@@ -45,33 +46,29 @@ int main()
                 cin >> angulo >> velocidad;
             };
 
-            // ---------------- Calculo ´para el alcance máximo ----------------
+        // ---------------- Calculo ´para el alcance máximo ----------------
 
-            anguloradial = angulo * pi / 180;
-            seno = sin(2*anguloradial);
+        anguloradial = angulo * pi / 180;
+        seno = sin(2*anguloradial);
 
-            resultadoAlcance = (pow(velocidad, 2) * 1) / 9.8;
+        resultadoAlcance = (pow(velocidad, 2) * 1) / 9.8;
 
-            // ---------------- Calculo ´para la altura maxima del proyectil ----------------
+        // ---------------- Calculo ´para la altura maxima del proyectil ----------------
 
-            seno2 = sin(anguloradial);
-            resultadoAltura =  pow((velocidad * seno2), 2);
-            resultadoAltura = resultadoAltura / (2 * 9.8);
-
-
-
-            cout << "\n\n\t\tImprimir datos y resultado";
-            cout << "\n----------------------------------";
-            cout << "\n\n\tEl ángulo de disparo del proyectil es: " << angulo;
-            cout << "\n\tLa velocidad inicial del proyectil es: " << velocidad;
-            cout << "\n\tEl alcance máximo del proyectil es:" << resultadoAlcance;
-            cout.precision(12);
-            cout << "\n\tLa altura máxima del proyectil es: " << resultadoAltura;
-            cout << "\n\n----------------------------------";
+        seno2 = sin(anguloradial);
+        resultadoAltura =  pow((velocidad * seno2), 2);
+        resultadoAltura = resultadoAltura / (2 * 9.8);
 
 
+        // --------------- Imprimir datos y resultados -----------;
 
-
+        cout << "\n\n\t\tImprimir datos y resultados";
+        cout << "\n\t---------------------------------------------------";
+        cout << "\n\n\tEl ángulo de disparo del proyectil es:\t" << angulo << " grados";
+        cout << "\n\n\tLa velocidad inicial del proyectil es:\t" << velocidad << " m/s";
+        cout << "\n\n\tEl alcance máximo del proyectil es:\t" << resultadoAlcance << " m";
+        cout << "\n\n\tLa altura máxima del proyectil es:\t" << resultadoAltura << " m";
+        cout << "\n\n\t---------------------------------------------------";
 
 
         cout << "\n\n\tDesea procesar otro proyectil S o N?\t";
