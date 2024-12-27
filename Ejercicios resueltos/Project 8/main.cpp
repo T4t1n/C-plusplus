@@ -8,9 +8,11 @@ using namespace std;
 int main()
 {
     setlocale(LC_ALL, "");
+    system("color 70");
     system("title, Project 8");
     string seguir, nombrePaciente;
     int KcalPaciente;
+    bool continuar;
 
     do {
 
@@ -19,10 +21,33 @@ int main()
 
         cout << "\n\n\tDigite el nombre del paciente:\t";
         cin >> nombrePaciente;
-        cout << "\n\n\tDigite la dieta calórica en Kcal del paciente:\t";
-        cin >> KcalPaciente,
+        do {
+            cout << "\n\n\tDigite la dieta calórica en Kcal del paciente:\t";
+            cin >> KcalPaciente;
 
+            while(KcalPaciente < 0) {
+                cin.clear();
+                cin.ignore();
+                cout << "\n\n\tError: El dato ingresado es incorrecto, debe ser un valor positivo";
+                Sleep(1500);
+                system("cls");
+                cout << "\n\n\tIntente de nuevo!";
+                Sleep(700);
+                system("cls");
+                continuar =  true;
+            }
+            while(cin.fail()){
+                cin.clear();
+                cin.ignore();
+                cout << "\n\n\tError: El dato ingresado es incorrecto debe ser valor numerico!";
+                Sleep(1500);
+                system("cls");
+                cout << "\n\n\tIntente de nuevo!";
+                continuar = true;
 
+            }
+
+        }while(continuar == true);
 
 
 
