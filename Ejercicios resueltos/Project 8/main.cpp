@@ -18,14 +18,37 @@ int main()
 
         cout << "\n\n\tPrograma que calcula los gramos de nutrientes para una dieta calórica!";
         cout << "\n\t--------------------------------------------------------------------------";
+        // refernce: https://stackoverflow.com/questions/64310193/how-do-you-use-cin-fail-to-validate-a-string-in-c
+        for (;;)
+        {
 
-        cout << "\n\n\tDigite el nombre del paciente:\t";
-        cin >> nombrePaciente;
+
+            cout << "\n\n\tDigite el nombre del paciente:\t";
+            cin >> nombrePaciente;
+            if ( !cin.fail())
+            {
+                for (char &c : nombrePaciente )
+                {
+                    if (!isalpha(c))
+                    {
+                        goto input_invalid;
+                    }
+                }
+                break;
+            }
+            input_invalid:
+            cout << "\n\n\tError! Digite un nombre." << endl;
+            cin.clear();
+            cin.ignore(256, '\n');
+        }
+
+
         do {
+
             cout << "\n\n\tDigite la dieta calórica en Kcal del paciente:\t";
             cin >> KcalPaciente;
 
-            while(KcalPaciente < 0) {
+            if(KcalPaciente < 0) {
                 cin.clear();
                 cin.ignore();
                 cout << "\n\n\tError: El dato ingresado es incorrecto, debe ser un valor positivo";
@@ -34,18 +57,22 @@ int main()
                 cout << "\n\n\tIntente de nuevo!";
                 Sleep(700);
                 system("cls");
-                continuar =  true;
+                continuar = true;
+
             }
-            while(cin.fail()){
+            if(cin.fail()){
                 cin.clear();
                 cin.ignore();
                 cout << "\n\n\tError: El dato ingresado es incorrecto debe ser valor numerico!";
                 Sleep(1500);
                 system("cls");
                 cout << "\n\n\tIntente de nuevo!";
+                Sleep(700);
+                system("cls");
                 continuar = true;
 
             }
+
 
         }while(continuar == true);
 
