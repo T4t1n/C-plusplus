@@ -2,6 +2,7 @@
 #include <string>
 #include <windows.h>
 #include <locale.h>
+#include <limits>
 
 using namespace std;
 
@@ -11,8 +12,8 @@ int main()
     system("color 70");
     system("title, Project 8");
     string seguir, nombrePaciente;
-    int KcalPaciente;
-    bool continuar;
+    bool KcalPaciente, Carbohidratos;
+    bool continuar = false;
 
     do {
 
@@ -43,46 +44,80 @@ int main()
         }
 
 
-        do {
+//        do {
+//            cout << "\n\n\tDigite la dieta calórica en Kcal del paciente:\t";
+//            cin >> KcalPaciente;
+//
+//            if(KcalPaciente < 0) {
+//                cin.clear();
+//                cin.ignore();
+//                cout << "\n\n\tError: El dato ingresado es incorrecto, debe ser un valor positivo";
+//                Sleep(1500);
+//                system("cls");
+//                cout << "\n\n\tIntente de nuevo!";
+//                Sleep(700);
+//                system("cls");
+//                continuar = true;
+//
+//            } else if(cin.fail()){
+//                cin.clear();
+//                cin.ignore();
+//                cout << "\n\n\tError: El dato ingresado es incorrecto debe ser valor numerico!";
+//                Sleep(1500);
+//                system("cls");
+//                cout << "\n\n\tIntente de nuevo!";
+//                Sleep(700);
+//                system("cls");
+//                continuar = true;
+//
+//            }
+//
+//
+//
+//        }while(continuar == true);
 
-            cout << "\n\n\tDigite la dieta calórica en Kcal del paciente:\t";
-            cin >> KcalPaciente;
-
-            if(KcalPaciente < 0) {
-                cin.clear();
-                cin.ignore();
-                cout << "\n\n\tError: El dato ingresado es incorrecto, debe ser un valor positivo";
-                Sleep(1500);
-                system("cls");
-                cout << "\n\n\tIntente de nuevo!";
-                Sleep(700);
-                system("cls");
-                continuar = true;
-
-            }
-            if(cin.fail()){
-                cin.clear();
-                cin.ignore();
-                cout << "\n\n\tError: El dato ingresado es incorrecto debe ser valor numerico!";
-                Sleep(1500);
-                system("cls");
-                cout << "\n\n\tIntente de nuevo!";
-                Sleep(700);
-                system("cls");
-                continuar = true;
-
-            }
 
 
-        }while(continuar == true);
 
 
+
+do {
+        continuar = false; // Reinicia el estado en cada iteración
+        cout << "\n\n\tDigite la dieta calórica en Kcal del paciente:\t";
+        cin >> KcalPaciente;
+
+        if (cin.fail()) { // Verifica si hubo error al leer
+            cin.clear(); // Limpia el estado de error de cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descarta caracteres en el búfer
+            cout << "\n\n\tError: El dato ingresado es incorrecto, debe ser un valor numérico!";
+            Sleep(1500);
+            system("cls");
+            cout << "\n\n\tIntente de nuevo!";
+            Sleep(700);
+            system("cls");
+            continuar = true;
+        } else if (KcalPaciente < 0) { // Verifica si es negativo
+            cout << "\n\n\tError: El dato ingresado es incorrecto, debe ser un valor positivo!";
+            Sleep(1500);
+            system("cls");
+            cout << "\n\n\tIntente de nuevo!";
+            Sleep(700);
+            system("cls");
+            continuar = true;        }
+   } while (continuar);
+
+
+
+
+
+        Carbohidratos = KcalPaciente * 0.55;
 
         // IMPRIMIR DATOS Y RESULTADOS
         cout << "\n\n\t\tImprimir datos y resultados";
         cout << "\n\t------------------------------------------------------";
         cout << "\n\n\tEl nombre del paciente es:\t\t\t" << nombrePaciente;
         cout << "\n\n\tLa dieta calórica del paciente es:\t\t" << KcalPaciente;
+        cout << "\n\n\tEl aporte calórico de los carbohidratos es: " << Carbohidratos;
 
 
 
