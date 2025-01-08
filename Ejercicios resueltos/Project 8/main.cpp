@@ -12,10 +12,11 @@ int main()
     system("color 70");
     system("title, Project 8");
     string seguir, nombrePaciente;
-    bool KcalPaciente, Carbohidratos;
+    int KcalPaciente, Carbohidratos, Lipidos, Proteinas, gramosCarbohidratos, gramosLipidos, gramosProteinas;
     bool continuar = false;
 
     do {
+        system("cls");
 
         cout << "\n\n\tPrograma que calcula los gramos de nutrientes para una dieta calórica!";
         cout << "\n\t--------------------------------------------------------------------------";
@@ -103,22 +104,35 @@ do {
             cout << "\n\n\tIntente de nuevo!";
             Sleep(700);
             system("cls");
-            continuar = true;        }
+            continuar = true;
+            } else {
+             cin.clear();
+             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            }
    } while (continuar);
 
 
-
-
-
         Carbohidratos = KcalPaciente * 0.55;
+        Lipidos = KcalPaciente * 0.30;
+        Proteinas = KcalPaciente * 0.15;
+
+
+        gramosCarbohidratos = Carbohidratos / 4;
+        gramosLipidos = Lipidos / 9;
+        gramosProteinas = Proteinas / 4;
 
         // IMPRIMIR DATOS Y RESULTADOS
         cout << "\n\n\t\tImprimir datos y resultados";
-        cout << "\n\t------------------------------------------------------";
+        cout << "\n\t---------------------------------------------------------------";
         cout << "\n\n\tEl nombre del paciente es:\t\t\t" << nombrePaciente;
-        cout << "\n\n\tLa dieta calórica del paciente es:\t\t" << KcalPaciente;
-        cout << "\n\n\tEl aporte calórico de los carbohidratos es: " << Carbohidratos;
-
+        cout << "\n\n\tLa dieta calórica del paciente es:\t\t" << KcalPaciente << " Kcal ";
+        cout << "\n\n\tEl aporte calórico de los carbohidratos es:\t" << Carbohidratos << " Kcal ";
+        cout << "\n\n\tEl aporte calórico de los lípidos es:\t\t" << Lipidos << " Kcal ";
+        cout << "\n\n\tEl aporte calórico de las proteína es:\t\t" << Proteinas << " Kcal ";
+        cout << "\n\n\tLos gramos de carbohidratos requeridos son:\t" << gramosCarbohidratos << " g ";
+        cout << "\n\n\tLos gramos de lípidos requeridos son:\t\t" << gramosLipidos << " g ";
+        cout << "\n\n\tLos gramos de proteínas requeridos son:\t\t" << gramosProteinas << " g ";
+        cout << "\n\n\t---------------------------------------------------------------";
 
 
 
