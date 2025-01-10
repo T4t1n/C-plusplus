@@ -13,6 +13,7 @@ int main()
     string seguir = "";
     double masa_Cilindro, radio_Cilindro, longitud_Cilindro;
     const double Densidad_Aluminio = 2.7, pi = M_PI;
+    bool flag = true;
     do {
 
         cout << "\n\n\tPrograma que calcula la longitud de un cilindro de aluminio!";
@@ -20,18 +21,29 @@ int main()
 
         cout << "\n\n\tCaptura y validación de datos";
         cout << "\n\t-----------------------------";
-        cout << "\n\n\tDigite la masa del cilindro en gramos:\t";
-        cin >> masa_Cilindro;
-        while (!(cin >> masa_Cilindro)) {
-            cout << "\n\n\tError: Digite la masa del cilindro en gramos:\t";
-            cin.clear();
-            cin.ignore(123, '\n');
+        while (true) {
+            cout << "\n\n\tDigite la masa del cilindro en gramos:\t";
+            if(cin >> masa_Cilindro && masa_Cilindro >= 0) {
+                break;
+            } else {
+                cout << "\n\n\tError: La masa debe ser un número mayor o igual a 0.\n";
+                cin.clear();
+                cin.ignore(123, '\n');
+            }
 
         }
+        while (true) {
+            cout << "\n\n\tDigite el radio del cilindro en cm:\t";
+            if (cin >> radio_Cilindro && radio_Cilindro >= 0) {
+                break;
+            } else {
+                cout << "\n\n\tError: la masa debe ser un número mayor o igual a 0\n";
+                cin.clear();
+                cin.ignore(123, '\n');
+            }
 
-        cout << "\n\n\tDigite el radio del cilindro en cm:\t";
-        cin >> radio_Cilindro;
 
+        }
         cout << "\n\n\tCalculando longitud del cilindro...";
         longitud_Cilindro = masa_Cilindro / (Densidad_Aluminio * ( pi * pow(radio_Cilindro, 2)));
         Sleep(700);
