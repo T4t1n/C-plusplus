@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1736469026 source:c:\users\cmjyt\onedrive\desktop\c++\ejercicios resueltos\project 9\main.cpp
+	<iostream>
+	<windows.h>
+	<locale.h>
+	<math.h>
+	<cmath>
+
