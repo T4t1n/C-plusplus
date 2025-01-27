@@ -45,7 +45,7 @@ int main()
 
         }
         cout << "\n\n\tCalculando longitud del cilindro...";
-        longitud_Cilindro = masa_Cilindro / (Densidad_Aluminio * ( pi * pow(radio_Cilindro, 2)));
+        longitud_Cilindro = masa_Cilindro / (Densidad_Aluminio * ( pi * pow(radio_Cilindro, 2))); // i can switch pi to 3.1416
         Sleep(700);
 
         cout << "\n\n\t\tImprimir datos y resultadors";
